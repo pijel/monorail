@@ -11,3 +11,5 @@ class Tile:
         #If we have openings on North and South or East and West, this is a straight piece, which we denote as 1.
         return 2
         #Otherwise, it's a bend piece, and we'll denote it as 2.
+        #antiquated class, don't use this anymore
+        #don't use this anymore
