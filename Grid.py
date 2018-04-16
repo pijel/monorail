@@ -5,7 +5,7 @@ class GameGrid:
     def __init__(self,grid={(0,0):[False,True,True,False],(0,1):[False,True,True,False]}):
         self.grid = grid
     #Initialize the grid to the starting position, but also allows for varied starting positions
-    #In Monorail, we start with two 
+    #In Monorail, we start with two horizontal east west tiles 
     def move(self,coord,tile1):
         if coord in self.grid:
             return False
