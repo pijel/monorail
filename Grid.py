@@ -15,6 +15,8 @@ class GameGrid:
     #as of now, it can place a single tile, but in the game its possible to place up to 3 in a row
     def show(self):
         print(self.grid)
+    def return_valid_moves(self):
+        pass
     def closedcomplete(self):       
         seen_coords = [(0,1)]            
         current_coord = (0,1)
@@ -23,14 +25,7 @@ class GameGrid:
         # follow track around 
         while current_coord != (0,0):
             #print(current_direction)
-            if current_direction == 0:
-                expected_direction = 3
-            elif current_direction == 1:
-                expected_direction = 2
-            elif current_direction == 2:
-                expected_direction = 1
-            elif current_direction == 3:
-                expected_direction = 0
+            expected_direction = 3 - current_direction
             # NORTH
             if current_direction == 0:
                 temp = list(current_coord)
