@@ -124,8 +124,8 @@ def possible_left_to_right():
                     q.add(current_config + [j])
     return answer
   
-#you can call possible_left_to_right to see a list of the possible left to right moves given in coordinate form. Here's something to make it easier to read(also why I changed the Tile class a bit)       
-
+#you can call possible_left_to_right to see a list of the possible left to right moves given in coordinate form. 
+#after the valid_left_to_right function there are more functions that make it easier to read  (which is why I changed __str__ in the tile class)
 def valid_left_to_right(tile_list):
     for i in range(len(tile_list)-1):
         if RIGHT in tile_list[i].openings and LEFT not in tile_list[i+1].openings:
@@ -137,7 +137,7 @@ def valid_left_to_right(tile_list):
     return True
         
 
-#this function will need to change based on what the direction of the tiles is 
+#this function will need to change based on what the direction of the tiles is (i.e horizontal or vertical)
 
 
 def print_tile_list(tile_list):
@@ -151,12 +151,12 @@ def print_tile_list(tile_list):
 
 final_answer = []
 for k in possible_left_to_right():
-       answer.append(print_tile_list(k))
+       final_answer.append(print_tile_list(k))
 easy_to_read_left_to_right = final_answer
 #print(easy_to_read_left_to_right)
 
 
-#Finally, here is just the list for perusal. Bad news for complexity - its 78 elements strong (out of 258 possible lists with no restriction). With a reasonable sounding ~10 openings to possibly play in, that's ~1000 moves. 
+#Finally, here is just the list for perusal. Bad news for complexity - its 78 elements strong (out of 258 possible lists with no restriction, so it's actually kinda good). With a reasonable sounding ~10 openings to possibly play in, that's ~1000 moves. 
 
 for_perusal = [['RIGHT UP'],
  ['DOWN UP'],
